@@ -1,8 +1,13 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import { sequelize } from './util/sequelize';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
+import { V0MODELS } from './models/model.index';
 
 (async () => {
+
+  await sequelize.addModels(V0MODELS);
+  await sequelize.sync();
 
   // Init the Express application
   const app = express();
