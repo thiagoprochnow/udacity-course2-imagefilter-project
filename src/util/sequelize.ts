@@ -13,5 +13,9 @@ export const sequelize = new Sequelize({
 
   dialect: 'postgres',
   storage: ':memory:',
+  define: {
+      //prevent sequelize from pluralizing table names
+      freezeTableName: true
+  }
 });
 
