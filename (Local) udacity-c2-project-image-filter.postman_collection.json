@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "09ca7ea5-3291-434e-9dcc-6feb11ca6ba6",
+		"name": "(Local) udacity-c2-project-image-filter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "(Unauthorized) /filteredimage?image_url",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(Authorized) /filteredimage?image_url",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQGdtYWlsLmNvbSIsInBhc3N3b3JkX2hhc2giOiIkMmIkMTAkZktYVTI0MzRjdDJyYU5EdDNaNUl3T2FNL2haelVCVHN1c1lYQUM3L2M3VjZNSVF5MnhGNzYiLCJjcmVhdGVkQXQiOiIyMDIxLTA4LTAyVDE5OjI4OjI0LjU2NVoiLCJ1cGRhdGVkQXQiOiIyMDIxLTA4LTAyVDE5OjI4OjI0LjU2NloiLCJpYXQiOjE2Mjc5MzMzMTl9.xQPFIJuCHD77BhbLYn7hk-4lgyMCotBzbtdT9iMovOY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(Invalid image) /filteredimage?image_url",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQGdtYWlsLmNvbSIsInBhc3N3b3JkX2hhc2giOiIkMmIkMTAkZktYVTI0MzRjdDJyYU5EdDNaNUl3T2FNL2haelVCVHN1c1lYQUM3L2M3VjZNSVF5MnhGNzYiLCJjcmVhdGVkQXQiOiIyMDIxLTA4LTAyVDE5OjI4OjI0LjU2NVoiLCJ1cGRhdGVkQXQiOiIyMDIxLTA4LTAyVDE5OjI4OjI0LjU2NloiLCJpYXQiOjE2Mjc5MzMzMTl9.xQPFIJuCHD77BhbLYn7hk-4lgyMCotBzbtdT9iMovOY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/en/a/a9/invalidimage.jpg",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://upload.wikimedia.org/wikipedia/en/a/a9/invalidimage.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8082"
+		}
+	]
+}
