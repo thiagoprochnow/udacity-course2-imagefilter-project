@@ -24,12 +24,14 @@
     "@types/node": "^11.13.17",
     "ts-node-dev": "^1.0.0-pre.40",
     "tslint": "^5.18.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.9.7"
   },
   "dependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/email-validator": "^1.0.6",
     "@types/jsonwebtoken": "^8.5.4",
+    "@types/sequelize": "^4.28.10",
+    "reflect-metadata": "^0.1.13",
     "aws-sdk": "^2.958.0",
     "bcrypt": "^5.0.1",
     "email-validator": "^2.0.4",
@@ -38,6 +40,7 @@
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.7.1",
     "rimraf": "^3.0.2",
+    "sequelize": "6.6.2",
     "sequelize-typescript": "^2.1.0"
   }
 }

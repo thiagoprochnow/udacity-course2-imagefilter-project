@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import { sequelize } from './util/sequelize';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
 import { V0MODELS } from './models/model.index';
+import { AuthRouter, requireAuth } from './user/routes/auth.router';
 
 (async () => {
 
@@ -17,6 +18,7 @@ import { V0MODELS } from './models/model.index';
   
   // Use the body parser middleware for post requests
   app.use(bodyParser.json());
+  app.use('/auth/',AuthRouter);
 
   // @TODO1 IMPLEMENT A RESTFUL ENDPOINT
   // GET /filteredimage?image_url={{URL}}
@@ -34,7 +36,7 @@ import { V0MODELS } from './models/model.index';
 
   /**************************************************************************** */
 
-  app.get('/filteredimage/', async (req, res) => {
+  app.get('/filteredimage/', requireAuth, async (req, res) => {
     let { image_url } = req.query;
 
     if ( !image_url ) {
