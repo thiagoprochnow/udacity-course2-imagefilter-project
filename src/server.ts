@@ -37,7 +37,7 @@ import { AuthRouter, requireAuth } from './user/routes/auth.router';
         deleteLocalFiles([file])
       })
     } catch (error) {
-      res.status(500).send("Error getting image from URL")
+      res.status(400).send("Error getting image from URL")
     }
   } );
   
