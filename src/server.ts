@@ -1,4 +1,5 @@
 import express from 'express';
+import { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import { sequelize } from './util/sequelize';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
@@ -21,7 +22,7 @@ import { AuthRouter, requireAuth } from './user/routes/auth.router';
   app.use('/auth/',AuthRouter);
 
   // endpoint to filter an image from a public url.
-  app.get('/filteredimage/', requireAuth, async (req, res) => {
+  app.get('/filteredimage/', requireAuth, async (req: Request, res: Response) => {
     let { image_url } = req.query;
 
     // Verify if image url is set, if not, return 400
@@ -43,7 +44,7 @@ import { AuthRouter, requireAuth } from './user/routes/auth.router';
   
   // Root Endpoint
   // Displays a simple message to the user
-  app.get( "/", async ( req, res ) => {
+  app.get( "/", async (req: Request, res: Response) => {
     res.send("try GET /filteredimage?image_url={{}}")
   } );
   
